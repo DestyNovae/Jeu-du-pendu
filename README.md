@@ -1,6 +1,6 @@
 # JEU DU PENDU
 
-Bienvenue dans le projet "Jeu du Pendu" créé par DestyNovae! Ce projet est une implémentation du classique jeu de devinettes où les joueurs essaient de deviner un mot en proposant des lettres.
+Bienvenue dans le "Jeu du Pendu" ! Ce projet est une implémentation du classique jeu de devinettes où les joueurs essaient de deviner un mot en proposant des lettres.
 
 ## Description
 
