@@ -1,6 +1,7 @@
 import random
 import xml.etree.ElementTree as ET
 import unicodedata
+import re
 
 # Charger le fichier XML
 tree = ET.parse('dictionnaire.xml')
@@ -15,17 +16,17 @@ for mot in root.findall('mot'):
     if mot_valeur:
         liste_mots.append(mot_valeur)
 
-# Choisir un mot au hasard dans la liste
+# Choisir un mot au hasard dans la liste 
 mot_secret = random.choice(liste_mots)
 essais_restants = 10
 lettres_devinees = []
-mot_affiche = ["_" for _ in mot_secret]
+mot_affiche = [caractere if caractere == "-" else "_" for caractere in mot_secret]
 
 def demander_une_lettre(lettres_devinees):
     # Boucle jusqu'à obtenir une lettre valide
     while True:
         lettre = input("Devinez une lettre : ").lower()
-        if len(lettre) == 1 and lettre.isalpha():
+        if re.match("^[a-z]", lettre) and len(lettre) == 1:
             if lettre in lettres_devinees:
                 print("Vous avez déjà deviné cette lettre.")
             else:
